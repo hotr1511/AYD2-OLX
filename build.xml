@@ -201,7 +201,7 @@
          unless="phpcs.done"
          depends="prepare"
          description="Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment.">
-  <exec executable="cmd" output="/dev/null">
+  <exec executable="cmd" output="${basedir}/dev/null">
    <arg value="/c"/>
    <arg file="${basedir}/vendor/bin/phpcs.bat" />
    <arg value="--report=checkstyle" />
