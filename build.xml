@@ -248,7 +248,7 @@
          depends="prepare"
          description="Run unit tests with PHPUnit">
   <exec executable="cmd" resultproperty="result.phpunit">
-   <arb value="/c" />
+   <arg value="/c" />
    <arg file="${basedir}/vendor/bin/phpunit.bat"/>
    <arg value="--configuration"/>
    <arg path="${basedir}/build/phpunit.xml"/>
