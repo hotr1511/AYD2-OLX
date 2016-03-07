@@ -233,7 +233,6 @@
          depends="prepare"
          description="Find duplicate code using PHPCPD and log result in XML format. Intended for usage within a continuous integration environment.">
   <exec executable="cmd">
-   <arg value="/c"/>
    <arg file="${basedir}/vendor/bin/phpcpd.bat"/>
    <arg value="--log-pmd" />
    <arg path="${basedir}/build/logs/pmd-cpd.xml" />
@@ -247,7 +246,7 @@
          unless="phpunit.done"
          depends="prepare"
          description="Run unit tests with PHPUnit">
-  <exec executable="cmd" resultproperty="result.phpunit">
+  <exec executable="cmd" resultproperty="result.phpunit" failonerror="true">
    <arg value="/c" />
    <arg file="${basedir}/vendor/bin/phpunit.bat"/>
    <arg value="--configuration"/>
