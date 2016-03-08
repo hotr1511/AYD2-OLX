@@ -130,7 +130,7 @@
 
  <target name="phpdox"
          description="Generate project documentation using phpDox">
-  <exec executable="${basedir}/vendor/phpdox/phpdox.bat" dir="${basedir}/build">
+  <exec executable="${basedir}/vendor/phpdox/phpdox.bat">
   </exec>
  </target>
 
