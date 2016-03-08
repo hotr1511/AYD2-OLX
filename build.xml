@@ -43,7 +43,7 @@
  </target>
 
  <target name="lint" description="Perform syntax check of sourcecode files">
-  <apply executable="php" failonerror="true">
+  <apply executable="C:/xampp/php/php" failonerror="true">
    <arg value="-l" />
 
    <fileset dir="${basedir}/src">
