@@ -123,7 +123,7 @@
 
  <target name="phpunit"
          description="Run unit tests with PHPUnit">
-  <exec executable="${phpunit}" resultproperty="result.phpunit">
+  <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
   </exec>
 
  </target>
