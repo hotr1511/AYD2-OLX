@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="name-of-project" default="build">
+ <property name="pdepend" value="${basedir}/vendor/bin/pdepend"/>
+ <property name="phpcpd"  value="${basedir}/vendor/bin/phpcpd"/>
+ <property name="phpcs"   value="${basedir}/vendor/bin/phpcs"/>
+ <property name="phpdox"  value="${basedir}/vendor/phpdox/phpdox"/>
+ <property name="phploc"  value="${basedir}/vendor/bin/phploc"/>
+ <property name="phpmd"   value="${basedir}/vendor/bin/phpmd"/>
  <property name="phpunit" value="phpunit"/>
  
  <target name="build"
