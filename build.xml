@@ -53,9 +53,7 @@
 
  <target name="phploc"
          description="Measure project size using PHPLOC and print human readable output. Intended for usage on the command line.">
-  <exec executable="cmd">
-   <arg value="/c"/> 
-   <arg file="${basedir}/vendor/bin/phploc.bat"/>
+  <exec executable="${basedir}/vendor/bin/phploc.bat">
    <arg value="--log-xml" />
    <arg value="${basedir}/build/logs/phploc.xml" />
    <arg path="${basedir}/src" />
@@ -64,9 +62,7 @@
 
  <target name="pdepend"
          description="Calculate software metrics using PHP_Depend and log result in XML format. Intended for usage within a continuous integration environment.">
-  <exec executable="cmd">
-   <arg value="/c"/>
-   <arg file="${basedir}/vendor/bin/pdepend.bat"/>
+  <exec executable="${basedir}/vendor/bin/pdepend.bat">
    <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
    <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
    <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
@@ -77,9 +73,7 @@
 
  <target name="phpmd"
          description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
-  <exec executable="cmd">
-   <arg value="/c"/>
-   <arg file="${basedir}/vendor/bin/phpmd.bat"/>
+  <exec executable="${basedir}/vendor/bin/phpmd.bat">
    <arg path="${basedir}/src" />
    <arg value="text" />
    <arg path="${basedir}/build/phpmd.xml" />
@@ -88,9 +82,7 @@
  </target>
 
  <target name="phpmd-ci" description="Perform project mess detection using PHPMD and log result in XML format. Intended for usage within a continuous integration environment.">
-  <exec executable="cmd">
-   <arg value="/c"/>
-   <arg file="${basedir}/vendor/bin/phpmd.bat"/>
+  <exec executable="${basedir}/vendor/bin/phpmd.bat">
    <arg path="${basedir}/src" />
    <arg value="xml" />
    <arg path="${basedir}/build/phpmd.xml" />
@@ -102,9 +94,7 @@
 
  <target name="phpcs"
          description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
-  <exec executable="cmd">
-   <arg value="/c"/>
-   <arg file="${basedir}/vendor/bin/phpcs.bat"/>
+  <exec executable="${basedir}/vendor/bin/phpcs.bat">
    <arg value="--standard=${basedir}/build/phpcs.xml" />
    <arg path="${basedir}/src" />
   </exec>
@@ -112,9 +102,7 @@
 
  <target name="phpcs-ci"
          description="Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment.">
-  <exec executable="cmd" output="${basedir}/dev/null">
-   <arg value="/c"/>
-   <arg file="${basedir}/vendor/bin/phpcs.bat" />
+  <exec executable="${basedir}/vendor/bin/phpcs.bat" output="${basedir}/dev/null">
    <arg value="--report=checkstyle" />
    <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
    <arg value="--standard=${basedir}/build/phpcs.xml" />
@@ -125,9 +113,7 @@
 
  <target name="phpcpd" 
          description="Find duplicate code using PHPCPD and print human readable output. Intended for usage on the command line before committing.">
-  <exec executable="cmd">
-   <arg value="/c"/>
-   <arg file="${basedir}/vendor/bin/phpcpd.bat"/>
+  <exec executable="${basedir}/vendor/bin/phpcpd.bat">
    <arg value="--log-pmd" />
    <arg value="${basedir}/build/logs/pmd-cpd.xml" />
    <arg path="${basedir}/src" />
@@ -137,18 +123,14 @@
 
  <target name="phpunit"
          description="Run unit tests with PHPUnit">
-  <exec executable="cmd" resultproperty="result.phpunit">
-   <arg value="/c" />
-   <arg file="${basedir}/vendor/bin/phpunit.bat"/>
+  <exec executable="${basedir}/vendor/bin/phpunit.bat" resultproperty="result.phpunit">
   </exec>
 
  </target>
 
  <target name="phpdox"
          description="Generate project documentation using phpDox">
-  <exec executable="cmd" dir="${basedir}/build">
-   <arg value="/c"/>
-   <arg file="${basedir}/vendor/phpdox/phpdox.bat"/>
+  <exec executable="${basedir}/vendor/phpdox/phpdox.bat" dir="${basedir}/build">
   </exec>
  </target>
 
