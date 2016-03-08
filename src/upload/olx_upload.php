@@ -7,7 +7,7 @@
 			$_FILES["fileToUpload"]["tmp_name"], $_POST["title"], $_POST["description"]);
 	if($status){
 		echo 'El fichero ' . $_FILES["fileToUpload"]["name"] . ' se ha subido con exito.';
-	} else {
+	//} else {
 		echo 'Error al subir el fichero.';
 	}
 ?>
